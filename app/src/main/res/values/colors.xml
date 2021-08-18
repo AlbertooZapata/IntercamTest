@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#668D3E</color>
+    <color name="colorPrimaryDark">#8F9D84</color>
+    <color name="colorAccent">#1363A2</color>
+
+    <color name="shadow">#1D000000</color>
+
+
+    <color name="text_color_emphasis_1">#DE000000</color>
+    <color name="text_color_emphasis_2">#99000000</color>
+    <color name="text_color_emphasis_3">#80000000</color>
+    <color name="text_color_emphasis_4">#40000000</color>
+    <color name="withe">#ffffff</color>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Login-->
+    <dimen name="size_icons_login">21dp</dimen>
+
+
+    <dimen name="size_icons_giant">45dp</dimen>
+    <dimen name="size_icons_big">30dp</dimen>
+    <dimen name="size_icons">23dp</dimen>
+    <dimen name="size_icons2">20dp</dimen>
+    <dimen name="size_icons3">15dp</dimen>
+    <dimen name="size_icons4">10dp</dimen>
+    <dimen name="bottom_sheet_dialog_size_font_user_position_menu">14sp</dimen>
+    <dimen name="bottom_sheet_dialog_size_font_item_menu">16sp</dimen>
+    <dimen name="bottom_sheet_dialog_size_font_title_menu">18sp</dimen>
+    <dimen name="bottom_sheet_dialog_size_font_name_profile_title">20sp</dimen>
+
+    <dimen name="size_icon_error">130dp</dimen>
+
+    <dimen name="text_page_titles">20dp</dimen>
+    <dimen name="text_page_paragraph">14dp</dimen>
+    <dimen name="text_list_title">16dp</dimen>
+    <dimen name="text_list_paragraph">14dp</dimen>
+    <dimen name="text_icons_message">14dp</dimen>
+
+
+
+
+
+
+    <dimen name="item_recyclerview_title">16sp</dimen>
+    <dimen name="item_recyclerview_message">25sp</dimen>
+    <dimen name="item_recyclerview_secondary_text">25sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="tab_height_large">72dp</dimen>
+
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IntercamTest</string>
+    <string name="first_image">first_image</string>
+    <string name="welcome_message">Bienvenido</string>
+    <string name="user_name_tools">Alberto Zapata</string>
+    <string name="company_img">Logo de empresa</string>
+    <string name="button_filter_text">Filtro de búsqueda</string>
+    <string name="profile_editor">Edicion de foto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exit_text">Salir</string>
+    <string name="support_text">Soporte:</string>
+    <string name="authorized_text">Autorizaste</string>
+    <string name="image_description">Descripcion de imagen</string>
+</resources>
