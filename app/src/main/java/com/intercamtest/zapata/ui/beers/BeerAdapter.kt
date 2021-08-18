@@ -1,8 +1,8 @@
 package com.intercamtest.zapata.ui.beers
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
@@ -24,9 +24,7 @@ class BeerAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
 
-
         val itemBeerBinding = ItemBeerBinding.inflate(LayoutInflater.from(context), parent, false)
-
         val holder = BeerViewHolder(itemBeerBinding)
         itemBeerBinding.root.setOnClickListener {
             val position =
@@ -47,13 +45,14 @@ class BeerAdapter(
         }
     }
 
-    inner class BeerViewHolder(private val itemBeerBinding: ItemBeerBinding) : BaseViewHolder<Beer>(itemBeerBinding.root) {
-        override fun bind(item: Beer) = with(itemBeerBinding){
+    inner class BeerViewHolder(private val itemBeerBinding: ItemBeerBinding) :
+        BaseViewHolder<Beer>(itemBeerBinding.root) {
+        override fun bind(item: Beer) = with(itemBeerBinding) {
 
+            Log.i(classTag, item.toString())
             itemBeerBinding.imgBeer.load(item.image_url)
             itemBeerBinding.txtName.text = item.name
             itemBeerBinding.txtTagLine.text = item.tagline
-
         }
     }
 

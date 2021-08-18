@@ -78,11 +78,11 @@ class PaymentsFragments : Fragment(), PaymentsAdapter.OnPaymentClickListener {
                     setRecyclerView(result.data)
                 }
                 is Resource.Failure -> {
-                    Toast.makeText(requireContext(), result.exception.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), result.exception.message, Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         })
-
     }
 
     private fun setRecyclerView(payments: List<Payment>) {
@@ -108,21 +108,16 @@ class PaymentsFragments : Fragment(), PaymentsAdapter.OnPaymentClickListener {
         binding.supportBtnContainer.setOnClickListener {
             Toast.makeText(requireContext(), "En proceso...", Toast.LENGTH_LONG).show()
         }
-
         binding.btnFilter.setOnClickListener {
             findNavController().navigate(R.id.action_paymentsFragments_to_beersFragment)
         }
-
-
     }
-
 
     private fun chooseImage() {
         val pickPhoto =
             Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(pickPhoto, PERMISSION_GALLERY_CODE)
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -177,5 +172,4 @@ class PaymentsFragments : Fragment(), PaymentsAdapter.OnPaymentClickListener {
         super.onDestroy()
         _binding = null
     }
-
 }

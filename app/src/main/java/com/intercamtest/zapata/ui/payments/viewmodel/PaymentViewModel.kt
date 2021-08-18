@@ -12,7 +12,6 @@ class PaymentViewModel(private val paymentRepo: PaymentRepo) : ViewModel() {
 
     private val loadTriggerGetAllPayments = MutableLiveData(Unit)
 
-
     fun refreshGetAllServices() {
         loadTriggerGetAllPayments.value = Unit
     }

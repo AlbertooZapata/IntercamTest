@@ -7,7 +7,6 @@ import com.intercamtest.zapata.vo.Resource
 class PaymentRepoImpl(private val dataSource: DataSource) : PaymentRepo {
 
     override suspend fun getAllPayments(): Resource<List<Payment>> {
-
         return dataSource.getAllPayments()
     }
 }

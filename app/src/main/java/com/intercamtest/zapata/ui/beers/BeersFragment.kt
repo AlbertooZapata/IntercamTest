@@ -6,22 +6,17 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.intercamtest.zapata.data.DataSource
 import com.intercamtest.zapata.data.model.Beer
 import com.intercamtest.zapata.databinding.FragmentBeersBinding
 import com.intercamtest.zapata.domain.beer.BeerRepoImpl
-import com.intercamtest.zapata.ui.beers.BeerVMFactory.BeerVMFactory
+import com.intercamtest.zapata.ui.beers.viewmodel.BeerVMFactory
 import com.intercamtest.zapata.ui.beers.viewmodel.BeerViewModel
-import com.intercamtest.zapata.ui.payments.PaymentsAdapter
 import com.intercamtest.zapata.vo.Resource
 
 /**
@@ -30,7 +25,7 @@ import com.intercamtest.zapata.vo.Resource
 class BeersFragment : Fragment(), BeerAdapter.OnBeerClickListener {
 
 
-    private val viewModel by viewModels<BeerViewModel>{
+    private val viewModel by viewModels<BeerViewModel> {
         BeerVMFactory(BeerRepoImpl(DataSource()))
     }
     private var _binding: FragmentBeersBinding? = null
@@ -53,20 +48,11 @@ class BeersFragment : Fragment(), BeerAdapter.OnBeerClickListener {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUI()
         setUpObserver()
     }
 
-    private fun setUI() {
-
-        //UI
-    }
-
     private fun setUpObserver() {
-
-
         viewModel.getBeers(page, perPage).observe(viewLifecycleOwner, Observer { result ->
-
             when (result) {
                 is Resource.Loading -> {
                     Log.i(classTag, "Loading source...")
@@ -75,7 +61,8 @@ class BeersFragment : Fragment(), BeerAdapter.OnBeerClickListener {
                     setRecyclerView(result.data)
                 }
                 is Resource.Failure -> {
-                    Toast.makeText(requireContext(), result.exception.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), result.exception.message, Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         })
@@ -87,15 +74,13 @@ class BeersFragment : Fragment(), BeerAdapter.OnBeerClickListener {
         binding.rvBeers.adapter = BeerAdapter(requireContext(), beerList, this)
     }
 
-
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
 
     override fun onItemClick(beer: Beer) {
-
-        CustomDialogFragment(beer).show(parentFragmentManager , "MyCustomFragment")
+        CustomDialogFragment(beer).show(parentFragmentManager, "MyCustomFragment")
     }
 
 }

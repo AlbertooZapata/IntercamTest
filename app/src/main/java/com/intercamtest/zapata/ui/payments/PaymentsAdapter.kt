@@ -23,8 +23,8 @@ class PaymentsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
 
-        val itemPaymentBinding = ItemPaymentBinding.inflate(LayoutInflater.from(context), parent, false)
-
+        val itemPaymentBinding =
+            ItemPaymentBinding.inflate(LayoutInflater.from(context), parent, false)
         val holder = PaymentViewHolder(itemPaymentBinding)
         itemPaymentBinding.root.setOnClickListener {
             val position =
@@ -45,18 +45,16 @@ class PaymentsAdapter(
         }
     }
 
-    inner class PaymentViewHolder(private val itemPaymentBinding: ItemPaymentBinding) : BaseViewHolder<Payment>(itemPaymentBinding.root) {
-        override fun bind(item: Payment) = with(itemPaymentBinding){
+    inner class PaymentViewHolder(private val itemPaymentBinding: ItemPaymentBinding) :
+        BaseViewHolder<Payment>(itemPaymentBinding.root) {
+        override fun bind(item: Payment) = with(itemPaymentBinding) {
 
             itemPaymentBinding.txtDescription.text = item.description
             itemPaymentBinding.txtQuantity1.text = item.quantity1.toString()
             itemPaymentBinding.txtQuantity2.text = item.quantity2.toString()
-            if (item.isAuthorized){
+            if (item.isAuthorized) {
                 itemPaymentBinding.txtIsAuthorized.visibility = View.VISIBLE
             }
-
-
-
         }
     }
 

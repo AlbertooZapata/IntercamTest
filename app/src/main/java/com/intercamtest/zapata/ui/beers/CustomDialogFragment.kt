@@ -16,7 +16,6 @@ import com.intercamtest.zapata.databinding.FragmentCustomDialogBinding
  */
 class CustomDialogFragment(val beer: Beer) : DialogFragment() {
 
-
     private var _binding: FragmentCustomDialogBinding? = null
     private val binding get() = _binding!!
     private val classTag = "myLog [${javaClass.simpleName}]"
@@ -27,7 +26,6 @@ class CustomDialogFragment(val beer: Beer) : DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         dialog!!.window?.setBackgroundDrawableResource(R.drawable.round_corner);
-
         _binding = FragmentCustomDialogBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -44,7 +42,6 @@ class CustomDialogFragment(val beer: Beer) : DialogFragment() {
         binding.txtTagLine.text = beer.tagline
         binding.txtDescription.text = beer.description
         binding.txtDate.text = beer.first_brewed
-
     }
 
     override fun onStart() {
@@ -57,6 +54,4 @@ class CustomDialogFragment(val beer: Beer) : DialogFragment() {
         super.onDestroy()
         _binding = null
     }
-
-
 }
